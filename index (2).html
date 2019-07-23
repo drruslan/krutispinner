@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <body id="main" style="background: url('water.jpg')">
+<center>
+    <img onmousedown="whenclick()" onmouseup="whenrelease()" id="mainspiner" src="spiner1.png" height="300"/>
+</center>
+<center>
+    <img onclick="changespiner('spiner1.png')" src="spiner1.png"  width="200"/>
+    <img onclick="changespiner('spiner4.png')" src="spiner4.png" width="200"/>
+    <img  onclick="changespiner('spinner2.png')" src="spinner2.png" width="200"/>
+</center>
+<center>
+    <img onclick="changefon('water.jpg')" src="water.jpg" height="200" />
+    <img onclick="changefon('trava.jpg')" src="trava.jpg" height="200"/>
+    <img onclick="changefon('stol.jpg')" src="stol.jpg" height="200" /></center>
+    <script>
+        spin=false
+        dig=0
+
+        function changespiner(spiner) {
+            document.getElementById('mainspiner').src=spiner
+            
+        }
+        function changefon(background) {
+            document.getElementById('main').style.background = "url('"+background+"')"
+
+        }
+        setInterval(function () {
+            if (spin===true) {
+                dig = dig + 20
+                document.getElementById('mainspiner').style.transform = 'rotate(' + dig + 'deg)'
+            }
+        },50)
+        function whenclick() {
+            spin=true
+
+        }
+        function whenrelease() {
+            spin=false
+
+        }
+    </script>
+</body>
+</html>
+
+
+
